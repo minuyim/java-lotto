@@ -6,10 +6,7 @@ import domain.lotto.lottoresult.LottoWinner;
 import domain.lotto.lottoresult.ResultCount;
 import generator.NumberGenerator;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class LottoGame {
@@ -48,6 +45,6 @@ public class LottoGame {
     }
 
     public List<LottoNumbers> getLottoGame() {
-        return lottoGame;
+        return Collections.unmodifiableList(lottoGame);
     }
 }

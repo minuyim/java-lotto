@@ -1,5 +1,6 @@
 package domain.lotto;
 
+import java.util.Collections;
 import java.util.Objects;
 import java.util.Set;
 import java.util.SortedSet;
@@ -40,6 +41,6 @@ public class LottoNumbers {
     }
 
     public Set<LottoNumber> getLottoNumbers() {
-        return lottoNumbers;
+        return Collections.unmodifiableSet(lottoNumbers);
     }
 }
