@@ -21,4 +21,14 @@ public class LottoNumberFactoryTest {
         LottoNumber lottoNumber2 = LottoNumberFactory.getInstance(value);
         Assertions.assertThat(lottoNumber1).isEqualTo(lottoNumber2);
     }
+
+    @ParameterizedTest
+    @ValueSource(ints = {0, -1, 46})
+    @DisplayName("예외처리 테스트")
+    void test3(int value) {
+        Assertions.assertThatThrownBy(() -> LottoNumberFactory.getInstance(value))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("1부터 45 사이의 숫자만 입력 가능합니다.");
+    }
+
 }
