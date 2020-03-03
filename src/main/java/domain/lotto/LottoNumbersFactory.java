@@ -11,13 +11,14 @@ public class LottoNumbersFactory {
         throw new AssertionError();
     }
 
-    public static LottoNumbers createLottoNumbers(NumberGenerator numberGenerator) {
-        return createLottoNumbers(numberGenerator.create());
+    public static LottoNumbers create(NumberGenerator numberGenerator) {
+        return create(numberGenerator.create());
     }
 
-    public static LottoNumbers createLottoNumbers(List<Integer> ints) {
+    public static LottoNumbers create(List<Integer> ints) {
         return ints.stream()
                 .map(LottoNumberFactory::getInstance)
-                .collect(Collectors.collectingAndThen(Collectors.toCollection(TreeSet::new), LottoNumbers::new));
+                .collect(Collectors.collectingAndThen(Collectors.toCollection(TreeSet::new),
+                        LottoNumbers::new));
     }
 }

@@ -13,7 +13,7 @@ import java.util.List;
 public class LottoWinnerTest {
     @Test
     @DisplayName("생성 테스트")
-    void test0() {
+    void test1() {
         Assertions.assertThatCode(() -> LottoWinner.create(Arrays.asList(1, 2, 3, 4, 5, 6), 7))
                 .doesNotThrowAnyException();
     }
@@ -31,7 +31,7 @@ public class LottoWinnerTest {
     @DisplayName("등수 1등 반환 확인")
     void test3() {
         List<Integer> lottoNumbers = Arrays.asList(1, 2, 3, 4, 5, 6);
-        LottoNumbers checkNumbers = LottoNumbersFactory.createLottoNumbers(new TestNumberGenerator());
+        LottoNumbers checkNumbers = LottoNumbersFactory.create(new TestNumberGenerator());
         LottoWinner winner = LottoWinner.create(lottoNumbers, 7);
         Assertions.assertThat(winner.createRank(checkNumbers)).isEqualTo(LottoRank.FIRST);
     }
@@ -41,7 +41,7 @@ public class LottoWinnerTest {
     void test4() {
         List<Integer> value = Arrays.asList(1, 2, 3, 4, 6, 7);
         List<Integer> lottoNumbers = Arrays.asList(1, 2, 3, 4, 5, 6);
-        LottoNumbers checkNumbers = LottoNumbersFactory.createLottoNumbers(new TestNumberGenerator(value));
+        LottoNumbers checkNumbers = LottoNumbersFactory.create(new TestNumberGenerator(value));
         LottoWinner winner = LottoWinner.create(lottoNumbers, 7);
         Assertions.assertThat(winner.createRank(checkNumbers)).isEqualTo(LottoRank.SECOND);
     }
@@ -51,7 +51,7 @@ public class LottoWinnerTest {
     void test5() {
         List<Integer> value = Arrays.asList(1, 2, 3, 4, 6, 8);
         List<Integer> lottoNumbers = Arrays.asList(1, 2, 3, 4, 5, 6);
-        LottoNumbers checkNumbers = LottoNumbersFactory.createLottoNumbers(new TestNumberGenerator(value));
+        LottoNumbers checkNumbers = LottoNumbersFactory.create(new TestNumberGenerator(value));
         LottoWinner winner = LottoWinner.create(lottoNumbers, 7);
         Assertions.assertThat(winner.createRank(checkNumbers)).isEqualTo(LottoRank.THIRD);
     }
@@ -61,7 +61,7 @@ public class LottoWinnerTest {
     void test6() {
         List<Integer> value = Arrays.asList(1, 2, 3, 4, 7, 8);
         List<Integer> lottoNumbers = Arrays.asList(1, 2, 3, 4, 5, 6);
-        LottoNumbers checkNumbers = LottoNumbersFactory.createLottoNumbers(new TestNumberGenerator(value));
+        LottoNumbers checkNumbers = LottoNumbersFactory.create(new TestNumberGenerator(value));
         LottoWinner winner = LottoWinner.create(lottoNumbers, 7);
         Assertions.assertThat(winner.createRank(checkNumbers)).isEqualTo(LottoRank.FOURTH);
     }
@@ -71,7 +71,7 @@ public class LottoWinnerTest {
     void test7() {
         List<Integer> value = Arrays.asList(1, 2, 3, 8, 9, 10);
         List<Integer> lottoNumbers = Arrays.asList(1, 2, 3, 4, 5, 6);
-        LottoNumbers checkNumbers = LottoNumbersFactory.createLottoNumbers(new TestNumberGenerator(value));
+        LottoNumbers checkNumbers = LottoNumbersFactory.create(new TestNumberGenerator(value));
         LottoWinner winner = LottoWinner.create(lottoNumbers, 7);
         Assertions.assertThat(winner.createRank(checkNumbers)).isEqualTo(LottoRank.FIFTH);
     }
@@ -81,7 +81,7 @@ public class LottoWinnerTest {
     void test8() {
         List<Integer> value = Arrays.asList(11, 21, 13, 14, 16, 17);
         List<Integer> lottoNumbers = Arrays.asList(1, 2, 3, 4, 5, 6);
-        LottoNumbers checkNumbers = LottoNumbersFactory.createLottoNumbers(new TestNumberGenerator(value));
+        LottoNumbers checkNumbers = LottoNumbersFactory.create(new TestNumberGenerator(value));
         LottoWinner winner = LottoWinner.create(lottoNumbers, 7);
         Assertions.assertThat(winner.createRank(checkNumbers)).isEqualTo(LottoRank.NOTHING);
     }

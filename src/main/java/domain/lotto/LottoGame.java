@@ -24,7 +24,7 @@ public class LottoGame {
 
     public static LottoGame create(NumberGenerator numberGenerator, RepeatCount repeatCount) {
         return repeatCount.toIntStream()
-                .mapToObj(i -> LottoNumbersFactory.createLottoNumbers(numberGenerator))
+                .mapToObj(i -> LottoNumbersFactory.create(numberGenerator))
                 .collect(Collectors.collectingAndThen(Collectors.toList(), LottoGame::new));
     }
 

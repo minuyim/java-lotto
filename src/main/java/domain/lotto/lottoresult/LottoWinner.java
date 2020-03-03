@@ -23,7 +23,8 @@ public class LottoWinner {
     }
 
     public static LottoWinner create(List<Integer> winnerNumbers, int bonusNumber) {
-        return new LottoWinner(LottoNumbersFactory.createLottoNumbers(winnerNumbers), LottoNumberFactory.getInstance(bonusNumber));
+        return new LottoWinner(LottoNumbersFactory.create(winnerNumbers),
+                LottoNumberFactory.getInstance(bonusNumber));
     }
 
     private void validateBonus(LottoNumbers lottoNumbers, LottoNumber bonus) {
