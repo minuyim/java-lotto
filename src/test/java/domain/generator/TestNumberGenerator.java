@@ -1,4 +1,4 @@
-package generator;
+package domain.generator;
 
 import java.util.List;
 import java.util.Objects;
@@ -9,8 +9,8 @@ public class TestNumberGenerator implements NumberGenerator {
     private final List<Integer> numbers;
 
     public TestNumberGenerator() {
-        numbers = IntStream.range(1, 7)
-                .mapToObj(Integer::new)
+        numbers = IntStream.rangeClosed(1, 6)
+                .boxed()
                 .collect(Collectors.toList());
     }
 

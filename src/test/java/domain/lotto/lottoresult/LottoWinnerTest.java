@@ -2,7 +2,7 @@ package domain.lotto.lottoresult;
 
 import domain.lotto.LottoNumbers;
 import domain.lotto.LottoNumbersFactory;
-import generator.TestNumberGenerator;
+import domain.generator.TestNumberGenerator;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

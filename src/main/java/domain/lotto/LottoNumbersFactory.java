@@ -1,6 +1,6 @@
 package domain.lotto;
 
-import generator.NumberGenerator;
+import domain.generator.NumberGenerator;
 
 import java.util.List;
 import java.util.TreeSet;

@@ -39,6 +39,10 @@ public class RepeatCount {
         return repeatCount != 0;
     }
 
+    public int getRepeatCount() {
+        return repeatCount;
+    }
+
     @Override
     public String toString() {
         return String.valueOf(repeatCount);

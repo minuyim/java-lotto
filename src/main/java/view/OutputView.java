@@ -1,7 +1,5 @@
 package view;
 
-import domain.Money;
-import domain.RepeatCount;
 import domain.lotto.LottoGame;
 import domain.lotto.LottoNumber;
 import domain.lotto.LottoNumbers;
@@ -39,7 +37,7 @@ public class OutputView {
         System.out.println("보너스 볼을 입력해 주세요.");
     }
 
-    public static void printLottoNumbersCount(RepeatCount userResultCount, RepeatCount autoResultCount) {
+    public static void printLottoNumbersCount(int userResultCount, int autoResultCount) {
         System.out.println(String.format("\n수동으로 %s장, 자동으로 %s장 구입하였습니다.", userResultCount, autoResultCount));
     }
 
@@ -61,10 +59,10 @@ public class OutputView {
         System.out.println(sb.toString());
     }
 
-    public static void printResultAll(Money money, LottoResult lottoResult) {
+    public static void printResultAndEarningRate(long earningRate, LottoResult lottoResult) {
         OutputView.printResultTitle();
         OutputView.printLottoResult(lottoResult);
-        OutputView.printEarning(money.calculateEarningRate(lottoResult.calculateEarning()));
+        OutputView.printEarning(earningRate);
     }
 
     private static void printResultTitle() {

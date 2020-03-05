@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class InputView {
     private static final Scanner scanner = new Scanner(System.in);
@@ -49,5 +50,12 @@ public class InputView {
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("정수가 아닌 값이 입력되었습니다.");
         }
+    }
+
+    public static List<List<Integer>> inputManualLottos(int repeatCount) {
+        OutputView.printRequestUserNumbers(repeatCount != 0);
+        return IntStream.range(0, repeatCount)
+                .mapToObj(i -> inputNumbers())
+                .collect(Collectors.toList());
     }
 }

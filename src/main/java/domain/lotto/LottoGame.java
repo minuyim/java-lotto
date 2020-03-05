@@ -4,7 +4,7 @@ import domain.RepeatCount;
 import domain.lotto.lottoresult.LottoResult;
 import domain.lotto.lottoresult.LottoWinner;
 import domain.lotto.lottoresult.ResultCount;
-import generator.NumberGenerator;
+import domain.generator.NumberGenerator;
 
 import java.util.*;
 import java.util.stream.Collectors;
