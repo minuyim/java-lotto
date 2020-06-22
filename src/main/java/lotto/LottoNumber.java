@@ -2,8 +2,9 @@ package lotto;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
-public class LottoNumber {
+public class LottoNumber implements Comparable<LottoNumber> {
 	private static Map<Integer, LottoNumber> CACHE = new HashMap<>();
 	private static final int MIN_LOTTO_NUMBER = 1;
 	private static final int MAX_LOTTO_NUMBER = 45;
@@ -29,5 +30,25 @@ public class LottoNumber {
 	public static LottoNumber of(int number) {
 		validate(number);
 		return CACHE.get(number);
+	}
+
+	@Override
+	public boolean equals(final Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+		final LottoNumber that = (LottoNumber)o;
+		return lottoNumber == that.lottoNumber;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(lottoNumber);
+	}
+
+	@Override
+	public int compareTo(LottoNumber lottoNumber) {
+		return Integer.compare(this.lottoNumber, lottoNumber.lottoNumber);
 	}
 }

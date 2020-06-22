@@ -15,6 +15,13 @@ public class LottoNumberTest {
 	}
 
 	@ParameterizedTest
+	@ValueSource(strings = {"1", "45"})
+	@DisplayName("로또 넘버 생성자 - 문자")
+	void ofString(int number) {
+		assertThat(LottoNumber.of(number)).isNotNull();
+	}
+
+	@ParameterizedTest
 	@ValueSource(ints = {0, -1, 46, 1000})
 	void ofWithException(int number) {
 		assertThatThrownBy(() -> LottoNumber.of(number))
