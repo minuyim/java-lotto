@@ -1,9 +1,6 @@
-package domain.lotto;
+package domain.lotto.ticket;
 
 import java.util.Arrays;
-
-import domain.lotto.ticket.Lotto;
-import domain.lotto.ticket.LottoGenerateStrategy;
 
 public class TestGenerateStrategy implements LottoGenerateStrategy {
 	@Override

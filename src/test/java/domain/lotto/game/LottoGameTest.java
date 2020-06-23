@@ -1,4 +1,4 @@
-package domain.lotto;
+package domain.lotto.game;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -9,8 +9,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import domain.lotto.game.LottoGame;
-import domain.lotto.game.WinningLotto;
 import domain.lotto.ticket.Lotto;
 import domain.lotto.ticket.LottoNumber;
 

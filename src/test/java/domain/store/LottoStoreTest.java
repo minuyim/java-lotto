@@ -1,4 +1,4 @@
-package domain.lotto;
+package domain.store;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -9,9 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import domain.lotto.ticket.Lotto;
-import domain.store.LottoPurchase;
-import domain.store.LottoStore;
-import domain.store.Money;
+import domain.lotto.ticket.TestGenerateStrategy;
 
 class LottoStoreTest {
 	@Test

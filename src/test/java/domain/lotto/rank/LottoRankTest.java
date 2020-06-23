@@ -1,4 +1,4 @@
-package domain.lotto;
+package domain.lotto.rank;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -15,7 +15,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import domain.lotto.game.WinningLotto;
 import domain.lotto.ticket.Lotto;
 import domain.lotto.ticket.LottoNumber;
-import domain.lotto.rank.LottoRank;
 import domain.store.WinningMoney;
 
 class LottoRankTest {

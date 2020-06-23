@@ -1,4 +1,4 @@
-package domain.lotto;
+package domain.lotto.result;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -8,8 +8,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import domain.lotto.rank.DefaultRankCalculator;
-import domain.lotto.result.LottoMatchResult;
-import domain.lotto.result.LottoMatchResults;
 
 class LottoMatchResultsTest {
 	@Test
