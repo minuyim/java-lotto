@@ -31,4 +31,10 @@ class WinningMoneyTest {
 	void add() {
 		assertThat(new WinningMoney(10L).add(10L)).isEqualTo(new WinningMoney(20L));
 	}
+
+	@Test
+	@DisplayName("투자한 돈에 비해 얼마나 수익률을 얻었는 지 확인")
+	void calculateWinningRate() {
+		assertThat(new WinningMoney(10_000L).calculateWinningRate(new Money(100L))).isEqualTo(100);
+	}
 }

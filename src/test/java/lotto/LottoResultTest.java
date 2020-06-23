@@ -19,4 +19,11 @@ public class LottoResultTest {
 	void calculateWinning() {
 		assertThat(new LottoResult(Arrays.asList(LottoRank.FIFTH, LottoRank.FORTH)).calculateWinning()).isEqualTo(new WinningMoney(55_000L));
 	}
+
+	@Test
+	@DisplayName("각 로또 등수별 당첨 수 확인")
+	void countRank() {
+		LottoResult lottoResult = new LottoResult(Arrays.asList(LottoRank.FIFTH, LottoRank.FORTH));
+		assertThat(lottoResult.countRank(LottoRank.FIFTH)).extracting("count").isEqualTo(1);
+	}
 }

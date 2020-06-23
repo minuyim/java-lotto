@@ -24,6 +24,10 @@ public class WinningMoney {
 		return new WinningMoney(winning + newWinning);
 	}
 
+	public double calculateWinningRate(Money money) {
+		return money.calculateRate(winning);
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o)
