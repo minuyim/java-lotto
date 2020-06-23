@@ -24,4 +24,19 @@ class MoneyTest {
 	void calculateRate() {
 		assertThat(new Money(10L).calculateRate(100)).isEqualTo(10);
 	}
+
+	@Test
+	void isDividable() {
+		assertThat(new Money(1000L).isDividable(100L)).isTrue();
+	}
+
+	@Test
+	void divideBy() {
+		assertThat(new Money(1000L).divideBy(100L)).isEqualTo(10);
+	}
+
+	@Test
+	void isEqualToOrLessThan() {
+		assertThat(new Money(1000L).isEqualToOrLessThan(1000L)).isTrue();
+	}
 }

@@ -20,6 +20,18 @@ public class Money {
 		return winning / money;
 	}
 
+	public boolean isDividable(long number) {
+		return money % number == 0;
+	}
+
+	public int divideBy(long number) {
+		return (int)(money / number);
+	}
+
+	public boolean isEqualToOrLessThan(long number) {
+		return money <= number;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o)

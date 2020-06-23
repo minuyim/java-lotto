@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Objects;
 
 public class LottoNumber implements Comparable<LottoNumber> {
-	private static Map<Integer, LottoNumber> CACHE = new HashMap<>();
+	public static Map<Integer, LottoNumber> CACHE = new HashMap<>();
 	private static final int MIN_LOTTO_NUMBER = 1;
 	private static final int MAX_LOTTO_NUMBER = 45;
 
