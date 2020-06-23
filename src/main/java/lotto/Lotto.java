@@ -28,4 +28,14 @@ public class Lotto {
 			.map(LottoNumber::of)
 			.collect(collectingAndThen(toCollection(TreeSet::new), Lotto::new));
 	}
+
+	public boolean contains(LottoNumber lottoNumber) {
+		return lotto.contains(lottoNumber);
+	}
+
+	public int countMatchedNumber(Lotto compared) {
+		return (int) lotto.stream()
+			.filter(compared::contains)
+			.count();
+	}
 }
