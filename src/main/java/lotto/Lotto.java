@@ -8,7 +8,7 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class Lotto {
-	private static final int LOTTO_SIZE = 6;
+	static final int SIZE = 6;
 
 	private SortedSet<LottoNumber> lotto;
 
@@ -18,8 +18,8 @@ public class Lotto {
 	}
 
 	private void validateSize(Set<LottoNumber> lotto) {
-		if (lotto.size() != LOTTO_SIZE) {
-			throw new IllegalArgumentException("로또 숫자는 " + LOTTO_SIZE + "개여야 합니다.");
+		if (lotto.size() != SIZE) {
+			throw new IllegalArgumentException("로또 숫자는 " + SIZE + "개여야 합니다.");
 		}
 	}
 

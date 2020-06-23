@@ -53,7 +53,7 @@ public class LottoTest {
 		assertThat(lotto.countMatchedNumber(compared1)).isEqualTo(expected);
 	}
 
-	static Stream<Arguments> provideMatchedNumber() {
+	private static Stream<Arguments> provideMatchedNumber() {
 		return Stream.of(
 			Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6), 6),
 			Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 7), 5),
