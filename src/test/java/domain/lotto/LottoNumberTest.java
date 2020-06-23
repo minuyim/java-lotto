@@ -6,6 +6,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import domain.lotto.ticket.LottoNumber;
+
 public class LottoNumberTest {
 	@ParameterizedTest
 	@ValueSource(ints = {1, 45})

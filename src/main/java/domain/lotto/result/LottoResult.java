@@ -1,9 +1,12 @@
-package domain.lotto;
+package domain.lotto.result;
 
 import static java.util.stream.Collectors.*;
 
 import java.util.List;
 import java.util.Objects;
+
+import domain.store.WinningMoney;
+import domain.lotto.rank.LottoRank;
 
 public class LottoResult {
 	private List<LottoRank> lottoRanks;

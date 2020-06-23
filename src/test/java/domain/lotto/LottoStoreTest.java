@@ -8,6 +8,11 @@ import java.util.Collections;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import domain.lotto.ticket.Lotto;
+import domain.store.LottoPurchase;
+import domain.store.LottoStore;
+import domain.store.Money;
+
 class LottoStoreTest {
 	@Test
 	@DisplayName("생성 테스트")

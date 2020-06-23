@@ -1,7 +1,7 @@
 package dto;
 
-import domain.lotto.LottoRank;
-import domain.lotto.RankResult;
+import domain.lotto.rank.LottoRank;
+import domain.lotto.result.RankResult;
 
 public class RankResultDto {
 	private int matchCount;

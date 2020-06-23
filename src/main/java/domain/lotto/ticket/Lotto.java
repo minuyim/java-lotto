@@ -1,4 +1,4 @@
-package domain.lotto;
+package domain.lotto.ticket;
 
 import static java.util.stream.Collectors.*;
 
@@ -9,7 +9,7 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class Lotto {
-	static final int SIZE = 6;
+	public static final int SIZE = 6;
 
 	private SortedSet<LottoNumber> lotto;
 

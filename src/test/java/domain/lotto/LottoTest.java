@@ -13,6 +13,9 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import domain.lotto.ticket.Lotto;
+import domain.lotto.ticket.LottoNumber;
+
 public class LottoTest {
 	@Test
 	@DisplayName("생성 테스트")

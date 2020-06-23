@@ -1,8 +1,10 @@
-package domain.lotto;
+package domain.lotto.result;
 
 import static java.util.stream.Collectors.*;
 
 import java.util.List;
+
+import domain.lotto.rank.RankCalculator;
 
 public class LottoMatchResults {
 	private List<LottoMatchResult> lottoMatchResults;

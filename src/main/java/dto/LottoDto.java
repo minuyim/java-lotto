@@ -4,8 +4,8 @@ import static java.util.stream.Collectors.*;
 
 import java.util.List;
 
-import domain.lotto.Lotto;
-import domain.lotto.LottoNumber;
+import domain.lotto.ticket.Lotto;
+import domain.lotto.ticket.LottoNumber;
 
 public class LottoDto {
 	private List<Integer> lottoNumbers;

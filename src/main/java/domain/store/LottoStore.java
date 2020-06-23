@@ -1,7 +1,11 @@
-package domain.lotto;
+package domain.store;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import domain.lotto.game.LottoGame;
+import domain.lotto.ticket.LottoGenerateStrategy;
+import domain.lotto.ticket.Lotto;
 
 public class LottoStore {
 	private static final long LOTTO_PRICE = 1_000L;

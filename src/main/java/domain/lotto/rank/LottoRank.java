@@ -1,6 +1,9 @@
-package domain.lotto;
+package domain.lotto.rank;
 
 import java.util.Arrays;
+
+import domain.lotto.result.LottoMatchResult;
+import domain.store.WinningMoney;
 
 public enum LottoRank {
 	FIRST(6, false, DefaultMatchingStrategy.DEFAULT, 2_000_000_000L),

@@ -12,6 +12,11 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import domain.lotto.game.WinningLotto;
+import domain.lotto.result.LottoMatchResult;
+import domain.lotto.ticket.Lotto;
+import domain.lotto.ticket.LottoNumber;
+
 public class WinningLottoTest {
 	@Test
 	@DisplayName("생성 테스트")

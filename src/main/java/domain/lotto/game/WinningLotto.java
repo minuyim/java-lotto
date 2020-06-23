@@ -1,4 +1,8 @@
-package domain.lotto;
+package domain.lotto.game;
+
+import domain.lotto.result.LottoMatchResult;
+import domain.lotto.ticket.Lotto;
+import domain.lotto.ticket.LottoNumber;
 
 public class WinningLotto {
 	private Lotto winning;

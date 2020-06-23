@@ -1,4 +1,6 @@
-package domain.lotto;
+package domain.lotto.result;
+
+import domain.lotto.rank.LottoRank;
 
 public class RankResult {
 	private LottoRank lottoRank;

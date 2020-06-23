@@ -12,6 +12,12 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import domain.lotto.game.WinningLotto;
+import domain.lotto.ticket.Lotto;
+import domain.lotto.ticket.LottoNumber;
+import domain.lotto.rank.LottoRank;
+import domain.store.WinningMoney;
+
 class LottoRankTest {
 	@ParameterizedTest
 	@DisplayName("MatchResult에 따른 Rank를 생성한다.")

@@ -1,6 +1,8 @@
-package domain.lotto;
+package domain.lotto.result;
 
 import java.util.Objects;
+
+import domain.lotto.ticket.Lotto;
 
 public class LottoMatchResult {
 	private int matchCount;

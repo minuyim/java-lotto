@@ -1,4 +1,6 @@
-package domain.lotto;
+package domain.store;
+
+import domain.store.Money;
 
 public class LottoPurchase {
 	private Money money;

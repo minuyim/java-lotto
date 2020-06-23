@@ -7,6 +7,10 @@ import java.util.Arrays;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import domain.lotto.rank.LottoRank;
+import domain.lotto.result.LottoResult;
+import domain.store.WinningMoney;
+
 public class LottoResultTest {
 	@Test
 	@DisplayName("생성 테스트")

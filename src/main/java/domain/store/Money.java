@@ -1,4 +1,4 @@
-package domain.lotto;
+package domain.store;
 
 import java.util.Objects;
 
