@@ -8,4 +8,9 @@ public class LottoResult {
 	public LottoResult(List<LottoRank> lottoRanks) {
 		this.lottoRanks = lottoRanks;
 	}
+
+	public WinningMoney calculateWinning() {
+		return lottoRanks.stream()
+			.reduce(new WinningMoney(0), ((total, lottoRank) -> lottoRank.addWinning(total)), WinningMoney::sum);
+	}
 }
