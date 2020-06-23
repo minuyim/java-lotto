@@ -21,6 +21,18 @@ public class LottoMatchResult {
 		}
 	}
 
+	public boolean hasBonus() {
+		return bonus;
+	}
+
+	public boolean isEqualToMatchCount(int count) {
+		return matchCount == count;
+	}
+
+	public boolean isEqualToOrGraterThanMatchCount(int count) {
+		return matchCount <= count;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o)

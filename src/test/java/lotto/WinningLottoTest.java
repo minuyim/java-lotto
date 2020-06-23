@@ -22,14 +22,14 @@ public class WinningLottoTest {
 
 	@ParameterizedTest
 	@DisplayName("등수 생성을 확인하는 테스트")
-	@MethodSource("provideMatchedRank")
+	@MethodSource("provideMatchedResult")
 	void calculateMatchResult(List<Integer> numbers, LottoMatchResult expected) {
 		WinningLotto winningLotto = new WinningLotto(Lotto.valueOf(Arrays.asList(1, 2, 3, 4, 5, 6)),
 			LottoNumber.of(45));
 		assertThat(winningLotto.calculateMatchResult(Lotto.valueOf(numbers))).isEqualTo(expected);
 	}
 
-	private static Stream<Arguments> provideMatchedRank() {
+	private static Stream<Arguments> provideMatchedResult() {
 		return Stream.of(
 			Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6), new LottoMatchResult(6, false)),
 			Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 45), new LottoMatchResult(5, true)),
