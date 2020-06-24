@@ -3,7 +3,6 @@ package domain.lotto.result;
 import static java.util.stream.Collectors.*;
 
 import java.util.List;
-import java.util.Objects;
 
 import domain.lotto.rank.LottoRank;
 import domain.store.WinningMoney;
@@ -22,7 +21,7 @@ public class LottoResult {
 
 	public RankResult countRank(LottoRank rank) {
 		return lottoRanks.stream()
-			.filter(lottoRank -> Objects.equals(rank, lottoRank))
+			.filter(lottoRank -> lottoRank.equals(rank))
 			.collect(collectingAndThen(counting(), count -> new RankResult(rank, (int)(long)count)));
 	}
 }

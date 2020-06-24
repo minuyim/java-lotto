@@ -58,29 +58,20 @@ public enum LottoRank {
 	}
 
 	private enum DefaultMatchingStrategy implements MatchingStrategy {
-		DEFAULT {
-			@Override
-			public boolean isMatch(LottoMatchResult lottoMatchResult, int matchCount) {
-				return lottoMatchResult.isEqualToMatchCount(matchCount);
-			}
-		},
-		WITH_BONUS {
-			@Override
-			public boolean isMatch(LottoMatchResult lottoMatchResult, int matchCount) {
-				return lottoMatchResult.isEqualToMatchCount(matchCount) && lottoMatchResult.hasBonus();
-			}
-		},
-		WITHOUT_BONUS {
-			@Override
-			public boolean isMatch(LottoMatchResult lottoMatchResult, int matchCount) {
-				return lottoMatchResult.isEqualToMatchCount(matchCount) && !lottoMatchResult.hasBonus();
-			}
-		},
-		UNDER {
-			@Override
-			public boolean isMatch(LottoMatchResult lottoMatchResult, int matchCount) {
-				return lottoMatchResult.isEqualToOrGraterThanMatchCount(matchCount);
-			}
+		DEFAULT(LottoMatchResult::isEqualToMatchCount),
+		WITH_BONUS((lottoMatchResult, matchCount) -> lottoMatchResult.isEqualToMatchCount(matchCount) && lottoMatchResult.hasBonus()),
+		WITHOUT_BONUS((lottoMatchResult, matchCount) -> lottoMatchResult.isEqualToMatchCount(matchCount) && !lottoMatchResult.hasBonus()),
+		UNDER(LottoMatchResult::isEqualToOrGraterThanMatchCount);
+
+		private final MatchingStrategy matchingStrategy;
+
+		DefaultMatchingStrategy(MatchingStrategy matchingStrategy) {
+			this.matchingStrategy = matchingStrategy;
+		}
+
+		@Override
+		public boolean isMatch(LottoMatchResult lottoMatchResult, int matchCount) {
+			return matchingStrategy.isMatch(lottoMatchResult, matchCount);
 		}
 	}
 }

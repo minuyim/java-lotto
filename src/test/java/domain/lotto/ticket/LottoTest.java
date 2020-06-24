@@ -21,7 +21,7 @@ public class LottoTest {
 	}
 
 	@Test
-	@DisplayName("생성 테스트 - 중복된 숫자가 있을 경우")
+	@DisplayName("생성 테스트 - 중복된 숫자가 있을 경우 예외 처리")
 	void valueOfWithException() {
 		assertThatThrownBy(() -> Lotto.valueOf(Arrays.asList(1, 1, 2, 3, 4, 5)))
 			.isInstanceOf(IllegalArgumentException.class)
@@ -29,7 +29,7 @@ public class LottoTest {
 	}
 
 	@Test
-	@DisplayName("생성 테스트 - 로또 넘버 갯수가 다를 경우")
+	@DisplayName("생성 테스트 - 로또 넘버 갯수가 다를 경우 예외 처리")
 	void valueOfWithSizeException() {
 		assertThatThrownBy(() -> Lotto.valueOf(Arrays.asList(1, 2, 3, 4, 5)))
 			.isInstanceOf(IllegalArgumentException.class)
@@ -45,6 +45,7 @@ public class LottoTest {
 	}
 
 	@ParameterizedTest
+	@DisplayName("다른 로또와 비교했을 때 매칭되는 숫자가 몇 개인지 확")
 	@MethodSource("provideMatchedNumber")
 	void countMatchedNumber(List<Integer> numbers, int expected) {
 		Lotto lotto = Lotto.valueOf(Arrays.asList(1, 2, 3, 4, 5, 6));

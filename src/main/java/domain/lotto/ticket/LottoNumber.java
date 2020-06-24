@@ -36,7 +36,7 @@ public class LottoNumber implements Comparable<LottoNumber> {
 	}
 
 	@Override
-	public int compareTo(LottoNumber lottoNumber) {
-		return Integer.compare(this.lottoNumber, lottoNumber.lottoNumber);
+	public int compareTo(LottoNumber other) {
+		return Integer.compare(lottoNumber, other.lottoNumber);
 	}
 }

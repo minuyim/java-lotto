@@ -17,16 +17,32 @@ public class LottoPurchase {
 	}
 
 	public int calculateAutoAmount(long lottoPrice) {
-		if (money.isEqualToOrLessThan(lottoPrice * manualAmount)) {
-			throw new IllegalArgumentException("수동 구매 횟수가 너무 많습니다.");
-		}
-		if (lottoPrice <= 0) {
-			throw new IllegalArgumentException("로또 가격은 0이하일 수 없습니다.");
-		}
+		validate(lottoPrice);
+		return money.divideBy(lottoPrice) - manualAmount;
+	}
+
+	private void validate(long lottoPrice) {
+		validateExcess(lottoPrice);
+		validateNegative(lottoPrice);
+		validateRemainder(lottoPrice);
+	}
+
+	private void validateRemainder(long lottoPrice) {
 		if (!money.isDividable(lottoPrice)) {
 			throw new IllegalArgumentException("거스름돈이 남습니다. 다시 입력해주세요.");
 		}
-		return money.divideBy(lottoPrice) - manualAmount;
+	}
+
+	private void validateNegative(long lottoPrice) {
+		if (lottoPrice <= 0) {
+			throw new IllegalArgumentException("로또 가격은 0이하일 수 없습니다.");
+		}
+	}
+
+	private void validateExcess(long lottoPrice) {
+		if (money.isEqualToOrLessThan(lottoPrice * manualAmount)) {
+			throw new IllegalArgumentException("수동 구매 횟수가 너무 많습니다.");
+		}
 	}
 
 	public boolean isNotEqualToManualAmount(int size) {

@@ -13,7 +13,6 @@ import domain.lotto.ticket.Lotto;
 import domain.lotto.ticket.LottoNumber;
 
 public class LottoGameTest {
-
 	private List<Lotto> lottos;
 
 	@BeforeEach

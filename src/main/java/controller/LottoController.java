@@ -36,17 +36,28 @@ public class LottoController {
 		LottoPurchase lottoPurchase = new LottoPurchase(money, inputView.getManualAmount());
 		LottoStore lottoStore = new LottoStore(new RandomLottoGenerator());
 		LottoGame game = lottoStore.createGame(lottoPurchase, getManualLotto(lottoPurchase.getManualAmount()));
+		printLotto(lottoPurchase, lottoStore, game);
+
+		LottoResult lottoResult = getLottoResult(game);
+		WinningMoney winningMoney = lottoResult.calculateWinning();
+		printResult(money, lottoResult, winningMoney);
+	}
+
+	private void printLotto(LottoPurchase lottoPurchase, LottoStore lottoStore, LottoGame game) {
 		outputView.printLottoCount(lottoPurchase.getManualAmount(), lottoStore.getAutoAmount(lottoPurchase));
 		outputView.printLotto(getLottoDtos(game.getLottos()));
+	}
 
+	private void printResult(Money money, LottoResult lottoResult, WinningMoney winningMoney) {
+		outputView.printRankResults(getRankResults(lottoResult));
+		outputView.printWinningRate(winningMoney.calculateWinningRate(money));
+	}
+
+	private LottoResult getLottoResult(LottoGame game) {
 		WinningLotto winningLotto = new WinningLotto(Lotto.valueOf(inputView.getWinningLotto()),
 			LottoNumber.of(inputView.getBonusNumber()));
 		LottoMatchResults lottoMatchResults = game.calculateResults(winningLotto);
-		LottoResult lottoResult = lottoMatchResults.calculateResults(new DefaultRankCalculator());
-		WinningMoney winningMoney = lottoResult.calculateWinning();
-
-		outputView.printRankResults(getRankResults(lottoResult));
-		outputView.printWinningRate(winningMoney.calculateWinningRate(money));
+		return lottoMatchResults.calculateResults(new DefaultRankCalculator());
 	}
 
 	private List<RankResultDto> getRankResults(LottoResult lottoResult) {

@@ -13,7 +13,7 @@ class LottoPurchaseTest {
 	}
 
 	@Test
-	@DisplayName("생성 테스트 - 예외")
+	@DisplayName("생성 테스트 - 음수 시 예외")
 	void constructorWithException() {
 		assertThatThrownBy(() -> new LottoPurchase(new Money(1000L), -1))
 			.isInstanceOf(IllegalArgumentException.class)

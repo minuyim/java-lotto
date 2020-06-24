@@ -21,6 +21,7 @@ class LottoMatchResultsTest {
 	}
 
 	@Test
+	@DisplayName("순위를 반환하는 기능 확인")
 	void calculateResults() {
 		LottoMatchResults lottoMatchResults = new LottoMatchResults(Arrays.asList(
 			new LottoMatchResult(6, false),
