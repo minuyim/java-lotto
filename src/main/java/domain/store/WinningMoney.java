@@ -14,7 +14,7 @@ public class WinningMoney {
 
 	private void validate(long winning) {
 		if (winning < 0) {
-			throw new IllegalArgumentException("총 당첨 금액은 음수일 수 없습니다.");
+			throw new IllegalArgumentException("총 당첨 금액은 음수일 수 없습니다. input : " + winning);
 		}
 	}
 

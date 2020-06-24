@@ -22,7 +22,7 @@ public class LottoNumber implements Comparable<LottoNumber> {
 
 	private static void validate(int number) {
 		if (!CACHE.containsKey(number)) {
-			throw new IllegalArgumentException("로또 번호에 해당하는 값을 입력해주세요.");
+			throw new IllegalArgumentException("로또 번호에 해당하는 값을 입력해주세요. input : " + number);
 		}
 	}
 

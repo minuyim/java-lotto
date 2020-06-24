@@ -12,7 +12,7 @@ public class Money {
 
 	private void validate(long money) {
 		if (money <= 0) {
-			throw new IllegalArgumentException("0보다 큰 금액이어야 합니다.");
+			throw new IllegalArgumentException("0보다 큰 금액이어야 합니다. input : " + money);
 		}
 	}
 

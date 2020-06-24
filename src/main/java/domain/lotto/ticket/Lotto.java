@@ -19,7 +19,7 @@ public class Lotto {
 
 	private void validateSize(Set<LottoNumber> lotto) {
 		if (lotto.size() != SIZE) {
-			throw new IllegalArgumentException("로또 숫자는 " + SIZE + "개여야 합니다.");
+			throw new IllegalArgumentException("로또 숫자는 " + SIZE + "개여야 합니다. size : " + lotto.size());
 		}
 	}
 

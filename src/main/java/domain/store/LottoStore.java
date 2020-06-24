@@ -17,7 +17,7 @@ public class LottoStore {
 
 	public LottoGame createGame(LottoPurchase lottoPurchase, List<Lotto> lottos) {
 		if (lottoPurchase.isNotEqualToManualAmount(lottos.size())) {
-			throw new IllegalArgumentException("수동 입력이 너무 많습니다.");
+			throw new IllegalArgumentException("수동 입력이 너무 많습니다. size : " + lottos.size() + " expected : " + lottoPurchase.getManualAmount());
 		}
 		List<Lotto> mergelottos = new ArrayList<>(lottos);
 		for (int i = 0, autoAmount = getAutoAmount(lottoPurchase); i < autoAmount; i++) {

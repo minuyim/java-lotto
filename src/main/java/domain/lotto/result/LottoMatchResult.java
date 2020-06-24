@@ -16,10 +16,10 @@ public class LottoMatchResult {
 
 	private void validateMatchCount(int matchCount) {
 		if (matchCount < 0) {
-			throw new IllegalArgumentException("matchCount는 음수가 불가능합니다.");
+			throw new IllegalArgumentException("matchCount는 음수가 불가능합니다. input : " + matchCount);
 		}
 		if (matchCount > Lotto.SIZE) {
-			throw new IllegalArgumentException("matchCount는 로또 크기를 초과할 수 없습니다.");
+			throw new IllegalArgumentException("matchCount는 로또 크기를 초과할 수 없습니다. input : "+ matchCount);
 		}
 	}
 

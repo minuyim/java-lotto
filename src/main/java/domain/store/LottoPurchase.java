@@ -12,7 +12,7 @@ public class LottoPurchase {
 
 	private void validate(int manualAmount) {
 		if (manualAmount < 0) {
-			throw new IllegalArgumentException("수동 구매 횟수는 음수일 수 없습니다.");
+			throw new IllegalArgumentException("수동 구매 횟수는 음수일 수 없습니다. input : " + manualAmount);
 		}
 	}
 
@@ -29,19 +29,19 @@ public class LottoPurchase {
 
 	private void validateRemainder(long lottoPrice) {
 		if (!money.isDividable(lottoPrice)) {
-			throw new IllegalArgumentException("거스름돈이 남습니다. 다시 입력해주세요.");
+			throw new IllegalArgumentException("거스름돈이 남습니다. 다시 입력해주세요. input : " + lottoPrice);
 		}
 	}
 
 	private void validateNegative(long lottoPrice) {
 		if (lottoPrice <= 0) {
-			throw new IllegalArgumentException("로또 가격은 0이하일 수 없습니다.");
+			throw new IllegalArgumentException("로또 가격은 0이하일 수 없습니다. input : " + lottoPrice);
 		}
 	}
 
 	private void validateExcess(long lottoPrice) {
 		if (money.isEqualToOrLessThan(lottoPrice * manualAmount)) {
-			throw new IllegalArgumentException("수동 구매 횟수가 너무 많습니다.");
+			throw new IllegalArgumentException("수동 구매 횟수가 너무 많습니다. input : " + lottoPrice);
 		}
 	}
 

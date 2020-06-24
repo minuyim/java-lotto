@@ -14,7 +14,7 @@ public class RankResult {
 
 	private void validate(int count) {
 		if (count < 0) {
-			throw new IllegalArgumentException("count는 음수일 수 없습니다.");
+			throw new IllegalArgumentException("count는 음수일 수 없습니다. input : " + count);
 		}
 	}
 
