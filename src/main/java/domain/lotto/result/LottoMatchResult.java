@@ -5,8 +5,8 @@ import java.util.Objects;
 import domain.lotto.ticket.Lotto;
 
 public class LottoMatchResult {
-	private int matchCount;
-	private boolean bonus;
+	private final int matchCount;
+	private final boolean bonus;
 
 	public LottoMatchResult(int matchCount, boolean bonus) {
 		validateMatchCount(matchCount);

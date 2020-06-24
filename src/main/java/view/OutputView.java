@@ -10,7 +10,6 @@ import dto.RankResultDto;
 
 public class OutputView {
 	public void printLottoCount(int manualAmount, int autoAmount) {
-
 		System.out.println("수동으로 " + manualAmount + "장, 자동으로 " + autoAmount + "장 구매하셨습니다.");
 	}
 

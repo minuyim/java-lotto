@@ -3,8 +3,8 @@ package domain.lotto.result;
 import domain.lotto.rank.LottoRank;
 
 public class RankResult {
-	private LottoRank lottoRank;
-	private int count;
+	private final LottoRank lottoRank;
+	private final int count;
 
 	public RankResult(LottoRank lottoRank, int count) {
 		validate(count);

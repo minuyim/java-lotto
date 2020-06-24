@@ -1,10 +1,8 @@
 package domain.store;
 
-import domain.store.Money;
-
 public class LottoPurchase {
-	private Money money;
-	private int manualAmount;
+	private final Money money;
+	private final int manualAmount;
 
 	public LottoPurchase(Money money, int manualAmount) {
 		validate(manualAmount);

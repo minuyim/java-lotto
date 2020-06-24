@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class InputView {
-	private Scanner scanner;
+	private final Scanner scanner;
 
 	public InputView(Scanner scanner) {
 		this.scanner = scanner;

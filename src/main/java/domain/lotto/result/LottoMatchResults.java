@@ -7,7 +7,7 @@ import java.util.List;
 import domain.lotto.rank.RankCalculator;
 
 public class LottoMatchResults {
-	private List<LottoMatchResult> lottoMatchResults;
+	private final List<LottoMatchResult> lottoMatchResults;
 
 	public LottoMatchResults(List<LottoMatchResult> lottoMatchResults) {
 		this.lottoMatchResults = lottoMatchResults;

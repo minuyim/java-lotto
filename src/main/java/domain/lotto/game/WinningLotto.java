@@ -5,8 +5,8 @@ import domain.lotto.ticket.Lotto;
 import domain.lotto.ticket.LottoNumber;
 
 public class WinningLotto {
-	private Lotto winning;
-	private LottoNumber bonus;
+	private final Lotto winning;
+	private final LottoNumber bonus;
 
 	public WinningLotto(Lotto winning, LottoNumber bonus) {
 		this.winning = winning;

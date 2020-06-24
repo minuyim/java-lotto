@@ -5,11 +5,11 @@ import static java.util.stream.Collectors.*;
 import java.util.List;
 import java.util.Objects;
 
-import domain.store.WinningMoney;
 import domain.lotto.rank.LottoRank;
+import domain.store.WinningMoney;
 
 public class LottoResult {
-	private List<LottoRank> lottoRanks;
+	private final List<LottoRank> lottoRanks;
 
 	public LottoResult(List<LottoRank> lottoRanks) {
 		this.lottoRanks = lottoRanks;

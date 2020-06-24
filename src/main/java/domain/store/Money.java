@@ -3,7 +3,7 @@ package domain.store;
 import java.util.Objects;
 
 public class Money {
-	private long money;
+	private final long money;
 
 	public Money(long money) {
 		validate(money);

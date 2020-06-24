@@ -9,7 +9,7 @@ import domain.lotto.result.LottoMatchResults;
 import domain.lotto.ticket.Lotto;
 
 public class LottoGame {
-	private List<Lotto> lottos;
+	private final List<Lotto> lottos;
 
 	public LottoGame(List<Lotto> lottos) {
 		this.lottos = lottos;

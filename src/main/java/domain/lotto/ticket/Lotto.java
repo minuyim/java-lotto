@@ -5,15 +5,14 @@ import static java.util.stream.Collectors.*;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
-import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class Lotto {
 	public static final int SIZE = 6;
 
-	private SortedSet<LottoNumber> lotto;
+	private final Set<LottoNumber> lotto;
 
-	private Lotto(SortedSet<LottoNumber> lotto) {
+	private Lotto(Set<LottoNumber> lotto) {
 		validateSize(lotto);
 		this.lotto = lotto;
 	}
@@ -35,12 +34,12 @@ public class Lotto {
 	}
 
 	public int countMatchedNumber(Lotto compared) {
-		return (int) lotto.stream()
+		return (int)lotto.stream()
 			.filter(compared::contains)
 			.count();
 	}
 
-	public SortedSet<LottoNumber> getLotto() {
-		return Collections.unmodifiableSortedSet(lotto);
+	public Set<LottoNumber> getLotto() {
+		return Collections.unmodifiableSet(lotto);
 	}
 }

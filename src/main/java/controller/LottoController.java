@@ -4,18 +4,18 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import domain.lotto.rank.DefaultRankCalculator;
-import domain.lotto.ticket.Lotto;
 import domain.lotto.game.LottoGame;
-import domain.lotto.result.LottoMatchResults;
-import domain.lotto.ticket.LottoNumber;
-import domain.store.LottoPurchase;
+import domain.lotto.game.WinningLotto;
+import domain.lotto.rank.DefaultRankCalculator;
 import domain.lotto.rank.LottoRank;
+import domain.lotto.result.LottoMatchResults;
 import domain.lotto.result.LottoResult;
+import domain.lotto.ticket.Lotto;
+import domain.lotto.ticket.LottoNumber;
+import domain.lotto.ticket.RandomLottoGenerator;
+import domain.store.LottoPurchase;
 import domain.store.LottoStore;
 import domain.store.Money;
-import domain.lotto.ticket.RandomLottoGenerator;
-import domain.lotto.game.WinningLotto;
 import domain.store.WinningMoney;
 import dto.LottoDto;
 import dto.RankResultDto;
@@ -23,8 +23,8 @@ import view.InputView;
 import view.OutputView;
 
 public class LottoController {
-	private InputView inputView;
-	private OutputView outputView;
+	private final InputView inputView;
+	private final OutputView outputView;
 
 	public LottoController(InputView inputView, OutputView outputView) {
 		this.inputView = inputView;

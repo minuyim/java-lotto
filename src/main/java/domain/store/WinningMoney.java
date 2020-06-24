@@ -5,7 +5,7 @@ import java.util.Objects;
 public class WinningMoney {
 	private static final int PERCENT = 100;
 
-	private long winning;
+	private final long winning;
 
 	public WinningMoney(long winning) {
 		validate(winning);
@@ -18,8 +18,8 @@ public class WinningMoney {
 		}
 	}
 
-	public static WinningMoney sum(WinningMoney winningMoney, WinningMoney winningMoney1) {
-		return new WinningMoney(winningMoney.winning + winningMoney1.winning);
+	public static WinningMoney sum(WinningMoney firstOperand, WinningMoney secondOperand) {
+		return new WinningMoney(firstOperand.winning + secondOperand.winning);
 	}
 
 	public WinningMoney add(Long newWinning) {
