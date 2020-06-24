@@ -27,7 +27,7 @@ public class WinningMoney {
 	}
 
 	public int calculateWinningRate(Money money) {
-		return (int) (money.calculateRate(winning) * PERCENT);
+		return (int)(money.calculateRate(winning) * PERCENT);
 	}
 
 	@Override

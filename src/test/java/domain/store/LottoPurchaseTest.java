@@ -47,7 +47,7 @@ class LottoPurchaseTest {
 
 	@Test
 	@DisplayName("자동 구매 횟수 계산하는 기능 - 거스름돈이 남을 경우")
-		void calculateAutoAmountNotDividedException() {
+	void calculateAutoAmountNotDividedException() {
 		LottoPurchase lottoPurchase = new LottoPurchase(new Money(3000L), 1);
 		assertThatThrownBy(() -> lottoPurchase.calculateAutoAmount(7L))
 			.isInstanceOf(IllegalArgumentException.class)

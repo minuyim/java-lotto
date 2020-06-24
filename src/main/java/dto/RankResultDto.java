@@ -18,7 +18,8 @@ public class RankResultDto {
 
 	public static RankResultDto of(RankResult rankResult) {
 		LottoRank lottoRank = rankResult.getLottoRank();
-		return new RankResultDto(lottoRank.getMatchCount(), lottoRank.needBonus(), lottoRank.getWinning(), rankResult.getCount());
+		return new RankResultDto(lottoRank.getMatchCount(), lottoRank.needBonus(), lottoRank.getWinning(),
+			rankResult.getCount());
 	}
 
 	public int getMatchCount() {

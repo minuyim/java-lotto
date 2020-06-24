@@ -23,6 +23,6 @@ public class LottoResult {
 	public RankResult countRank(LottoRank rank) {
 		return lottoRanks.stream()
 			.filter(lottoRank -> Objects.equals(rank, lottoRank))
-			.collect(collectingAndThen(counting(), count -> new RankResult(rank, (int)(long) count)));
+			.collect(collectingAndThen(counting(), count -> new RankResult(rank, (int)(long)count)));
 	}
 }

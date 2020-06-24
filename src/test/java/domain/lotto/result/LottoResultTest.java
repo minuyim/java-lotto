@@ -20,7 +20,8 @@ public class LottoResultTest {
 	@Test
 	@DisplayName("로또 게임의 총 상금을 계산하는지 확인")
 	void calculateWinning() {
-		assertThat(new LottoResult(Arrays.asList(LottoRank.FIFTH, LottoRank.FORTH)).calculateWinning()).isEqualTo(new WinningMoney(55_000L));
+		assertThat(new LottoResult(Arrays.asList(LottoRank.FIFTH, LottoRank.FORTH)).calculateWinning()).isEqualTo(
+			new WinningMoney(55_000L));
 	}
 
 	@Test
