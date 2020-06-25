@@ -3,7 +3,6 @@ package domain.lotto.rank;
 import java.util.Arrays;
 
 import domain.lotto.result.LottoMatchResult;
-import domain.store.WinningMoney;
 
 public enum LottoRank {
 	FIRST(6, false, DefaultMatchingStrategy.DEFAULT, 2_000_000_000L),
@@ -32,8 +31,8 @@ public enum LottoRank {
 			.orElseThrow(() -> new IllegalArgumentException("조건에 해당하는 Rank가 존재하지 않습니다."));
 	}
 
-	public WinningMoney addWinning(WinningMoney subTotal) {
-		return subTotal.add(winning);
+	public long addWinning(long subTotal) {
+		return winning + subTotal;
 	}
 
 	private boolean isMatch(LottoMatchResult lottoMatchResult) {

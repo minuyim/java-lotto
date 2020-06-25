@@ -15,7 +15,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import domain.lotto.game.WinningLotto;
 import domain.lotto.ticket.Lotto;
 import domain.lotto.ticket.LottoNumber;
-import domain.store.WinningMoney;
 
 class LottoRankTest {
 	@ParameterizedTest
@@ -43,6 +42,6 @@ class LottoRankTest {
 	@Test
 	@DisplayName("랭크, 상금 간 합이 계산 가능한지 확인한다.")
 	void addWinning() {
-		assertThat(LottoRank.FIFTH.addWinning(new WinningMoney(50_000L))).isEqualTo(new WinningMoney(55_000L));
+		assertThat(LottoRank.FIFTH.addWinning(50_000L)).isEqualTo(55_000L);
 	}
 }

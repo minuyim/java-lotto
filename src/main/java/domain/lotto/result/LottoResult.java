@@ -15,8 +15,8 @@ public class LottoResult {
 	}
 
 	public WinningMoney calculateWinning() {
-		return lottoRanks.stream()
-			.reduce(new WinningMoney(0), ((total, lottoRank) -> lottoRank.addWinning(total)), WinningMoney::sum);
+		return new WinningMoney(lottoRanks.stream()
+			.reduce(0L, ((total, lottoRank) -> lottoRank.addWinning(total)), Long::sum));
 	}
 
 	public RankResult countRank(LottoRank rank) {
